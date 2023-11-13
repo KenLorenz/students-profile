@@ -4,7 +4,7 @@ include_once("../town_city.php");
 
 $db = new Database();
 $connection = $db->getConnection();
-$town = new TownCity($db);
+$prov = new TownCity($db);
 
 ?>
 <!DOCTYPE html>
@@ -12,7 +12,7 @@ $town = new TownCity($db);
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Town City Records</title>
+        <title>Province Records</title>
         <link rel="stylesheet" type="text/css" href="../css/styles.css">
     </head>
     <body>
@@ -20,7 +20,7 @@ $town = new TownCity($db);
         <?php include('../includes/navbar.php'); ?>
 
         <div class="content">
-            <h2>Town City Records</h2>
+            <h2>Province Records</h2>
             <table class="orange-theme">
                 <thead>
                     <tr>
@@ -35,7 +35,7 @@ $town = new TownCity($db);
                     foreach ($results as $x) {
                         echo '<tr>';
                         echo "<td>" . $x['name'] . "</td>";
-                        echo "<td><a href=town_city_edit.php?id=". $x['id'].">Edit</a>|<a href=town_city_delete.php?id=". $x['id'].">Delete</a></td>";
+                        echo "<td><a href=province_edit.php?id=". $x['id'].">Edit</a>|<a href=province_delete.php?id=". $x['id'].">Delete</a></td>";
                         echo '</tr>';
                     }
                     ?>
