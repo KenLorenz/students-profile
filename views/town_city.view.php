@@ -42,6 +42,7 @@ $town = new TownCity($db);
                     <!-- </tr> -->
                 </tbody>
             </table>
+            <a class="button-link" href="town_city_add.php">Add New Record</a>
         </div>
     </body>
 </html>

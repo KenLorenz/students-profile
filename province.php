@@ -83,7 +83,7 @@ class Province {
             if ($stmt->rowCount() > 0) {
                 return true; // Record deleted successfully
             } else {
-                return false; // No records were deleted (student_id not found)
+                return false; // No records were deleted
             }
 
         } catch (PDOException $e) {
