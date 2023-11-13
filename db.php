@@ -18,7 +18,7 @@ class Database {
 
 
     public function getConnection() {
-        echo 'Connected';
+        // echo 'Connected';
         return $this->conn;
     }
 }
