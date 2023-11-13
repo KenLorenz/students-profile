@@ -42,6 +42,7 @@ $prov = new Province($db);
                     <!-- </tr> -->
                 </tbody>
             </table>
+            <a class="button-link" href="province_add.php">Add New Record</a>
         </div>
     </body>
 </html>
