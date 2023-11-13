@@ -73,6 +73,24 @@ class Province {
             throw $e; // Re-throw the exception for higher-level handling
         }
     }
+    public function delete($id) { # untested
+        try {
+            $sql = "DELETE FROM province where id = :id";
+            $stmt = $this->db->getConnection()->prepare($sql);
+            $stmt->bindValue(':id',$id);
+            $stmt->execute();
+
+            if ($stmt->rowCount() > 0) {
+                return true; // Record deleted successfully
+            } else {
+                return false; // No records were deleted (student_id not found)
+            }
+
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            throw $e;
+        }
+    }
 
     public function displayAll() {
         try {
