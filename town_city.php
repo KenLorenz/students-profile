@@ -95,7 +95,7 @@ class TownCity {
 
     public function displayAll() {
         try {
-            $sql = "SELECT * FROM town_city LIMIT 10";
+            $sql = "SELECT * FROM town_city";
             $stmt = $this->db->getConnection()->prepare($sql);
             $stmt->execute();
 

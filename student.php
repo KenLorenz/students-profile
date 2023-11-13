@@ -116,7 +116,7 @@ class Student {
             // Modify the table name to match your database
 
             $sql = "SELECT id, student_number, first_name, last_name, middle_name, gender, 
-            date_format(birthday, ".  "'%b %d %Y'"  .") as birthday FROM students LIMIT 10"; /* format for birthday */
+            date_format(birthday, ".  "'%b %d %Y'"  .") as birthday FROM students LIMIT 10"; /* format for birthday -- limit 10 -- */
 
             $stmt = $this->db->getConnection()->prepare($sql);
             $stmt->execute();

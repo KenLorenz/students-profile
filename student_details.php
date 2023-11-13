@@ -37,8 +37,8 @@ class StudentDetails {
         
     }
 
-    public function studentSearch($studentID) {
-        try {
+    public function studentSearch($studentID) { # Individual Search for a row, plays a main role for merging two tables in one visual table
+        try { # Basically read() but uses studentID
             $connection = $this->db->getConnection();
 
             $sql = "SELECT * FROM student_details WHERE student_id = :id";

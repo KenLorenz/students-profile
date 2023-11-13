@@ -94,7 +94,7 @@ class Province {
 
     public function displayAll() {
         try {
-            $sql = "SELECT * FROM province LIMIT 10";
+            $sql = "SELECT * FROM province";
             $stmt = $this->db->getConnection()->prepare($sql);
             $stmt->execute();
 
