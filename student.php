@@ -22,6 +22,9 @@ class Student {
             $stmt->bindParam(':gender', $data['gender']);
             $stmt->bindParam(':birthday', $data['birthday']);
 
+            # Uncaught PDOException: SQLSTATE[HY000]: General error: 1467 Failed to read auto-increment value from storage engine in 
+            # /home/ren/Documents/app-dev/Gitfiles/students-profile/student.php:26
+            
             // Execute the INSERT query
             $stmt->execute();
 
