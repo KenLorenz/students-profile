@@ -1,10 +1,10 @@
 <?php
 include_once("../db.php");
-include_once("../town_city.php");
+include_once("../province.php");
 
 $db = new Database();
 $connection = $db->getConnection();
-$prov = new TownCity($db);
+$prov = new Province($db);
 
 ?>
 <!DOCTYPE html>
@@ -31,7 +31,7 @@ $prov = new TownCity($db);
                 <tbody>
                     <!-- <tr> -->
                     <?php
-                    $results = $town->displayAll();
+                    $results = $prov->displayAll();
                     foreach ($results as $x) {
                         echo '<tr>';
                         echo "<td>" . $x['name'] . "</td>";
