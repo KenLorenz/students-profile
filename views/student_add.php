@@ -104,7 +104,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $database = new Database();
             $towns = new TownCity($database);
-            $results = $towns->getAll();
+            $results = $towns->displayAll();
             // echo print_r($results);
             foreach($results as $result)
             {
@@ -119,7 +119,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $database = new Database();
             $provinces = new Province($database);
-            $results = $provinces->getAll();
+            $results = $provinces->displayAll();
             // echo print_r($results);
             foreach($results as $result)
             {
