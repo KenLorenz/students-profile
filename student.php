@@ -24,7 +24,7 @@ class Student {
 
             # Uncaught PDOException: SQLSTATE[HY000]: General error: 1467 Failed to read auto-increment value from storage engine in 
             # /home/ren/Documents/app-dev/Gitfiles/students-profile/student.php:26
-            
+
             // Execute the INSERT query
             $stmt->execute();
 
@@ -113,7 +113,11 @@ class Student {
 
     public function displayAll(){
         try {
-            $sql = "SELECT * FROM students LIMIT 10"; // Modify the table name to match your database
+            // Modify the table name to match your database
+
+            $sql = "SELECT student_number, first_name, last_name, middle_name, gender, 
+            date_format(birthday, ".  "'%b %d %Y'"  .") as birthday FROM students LIMIT 10"; /* format for birthday */
+
             $stmt = $this->db->getConnection()->prepare($sql);
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);

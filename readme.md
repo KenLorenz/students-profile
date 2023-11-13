@@ -17,4 +17,4 @@ To Dos:
 - Fix Edit of Student's Profile use appropriate controls for gender and birthdate.
 - Modify display in students table include some data from student_details table
 - Fix Gender display use 'F' or 'M' (do not change database structure) -- Done
-- Fix Birthdate display use 'Jan 1 2020' format.
+- Fix Birthdate display use 'Jan 1 2020' format. -- Done
