@@ -19,6 +19,9 @@ To Dos:
 - Fix Gender display use 'F' or 'M' (do not change database structure) -- Done
 - Fix Birthdate display use 'Jan 1 2020' format. -- Done
 
-
 Personal Addition:
 - Pagination
+
+
+Coding Session 2
+- JS stuff
