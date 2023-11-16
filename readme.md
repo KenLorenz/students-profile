@@ -18,7 +18,7 @@ To Dos:
 - Modify display in students table include some data from student_details table -- Done
 - Fix Gender display use 'F' or 'M' (do not change database structure) -- Done
 - Fix Birthdate display use 'Jan 1 2020' format. -- Done
-
+- Fix Delete of Student's Profile include student_details.
 Personal Addition:
 - Pagination
 
