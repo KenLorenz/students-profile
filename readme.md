@@ -21,7 +21,7 @@ To Dos:
 - Fix Delete of Student's Profile include student_details. -- Done
 
 Personal Addition:
-- Pagination
+- Pagination -- Done
 
 
 Coding Session 2
