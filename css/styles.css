@@ -228,3 +228,15 @@ footer {
 .footer-links a:hover {
     color: #74C69D;
 }
+
+.page_div {
+    margin: 50px;
+}
+
+.page_btn {
+    margin: 5px;
+    background-color: #D8F3DC;
+    padding: 0.5%;
+    border-radius: 5px;
+    text-decoration: none;
+}

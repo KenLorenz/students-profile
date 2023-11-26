@@ -61,10 +61,12 @@ $page_first_result = ($page - 1) * $rows_per_page;
                 </tbody>
             </table>
             <a class="button-link" href="province_add.php">Add New Record</a>
-            <?php
-            for($page = 1; $page <= $number_of_pages; $page++){
-                echo '<a href="province.view.php?page='. $page . '">' . $page . '</a>';
-            }?>
+            <div class="page_div">
+                <?php
+                for($page = 1; $page <= $number_of_pages; $page++){
+                    echo '<a class=page_btn href="province.view.php?page='. $page . '">' . $page . '</a>';
+                }?>
+            </div>
         </div>
     </body>
 </html>
