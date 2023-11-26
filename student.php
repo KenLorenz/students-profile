@@ -111,12 +111,30 @@ class Student {
         }
     }
 
+    public function displayLimit($page_first_result,$rows_per_page){
+        try {
+            // Modify the table name to match your database
+
+            $sql = "SELECT id, student_number, first_name, last_name, middle_name, gender, 
+            date_format(birthday, ".  "'%b %d %Y'"  .") as birthday FROM students LIMIT " . $page_first_result . "," . $rows_per_page;
+
+            $stmt = $this->db->getConnection()->prepare($sql);
+            $stmt->execute();
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        } catch (PDOException $e) {
+            // Handle any potential errors here
+            echo "Error: " . $e->getMessage();
+            throw $e; // Re-throw the exception for higher-level handling
+        }
+    }
+
     public function displayAll(){
         try {
             // Modify the table name to match your database
 
             $sql = "SELECT id, student_number, first_name, last_name, middle_name, gender, 
-            date_format(birthday, ".  "'%b %d %Y'"  .") as birthday FROM students LIMIT 10"; /* format for birthday -- limit 10 -- */
+            date_format(birthday, ".  "'%b %d %Y'"  .") as birthday FROM students";
 
             $stmt = $this->db->getConnection()->prepare($sql);
             $stmt->execute();

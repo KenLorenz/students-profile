@@ -49,7 +49,7 @@ $page_first_result = ($page - 1) * $rows_per_page;
                 <tbody>
                     <!-- <tr> -->
                     <?php
-                    $results = $prov->displayAll($page_first_result,$rows_per_page);
+                    $results = $prov->displayLimit($page_first_result,$rows_per_page);
                     foreach ($results as $x) {
                         echo '<tr>';
                         echo "<td>" . $x['name'] . "</td>";
