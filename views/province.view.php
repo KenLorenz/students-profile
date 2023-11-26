@@ -6,6 +6,24 @@ $db = new Database();
 $connection = $db->getConnection();
 $prov = new Province($db);
 
+
+$query = "SELECT count(*) as 'total' FROM province"; # get total rows
+$stmt = $db->getConnection()->prepare($query);
+$stmt->execute();
+
+$total_rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$rows_per_page = 30;
+$number_of_pages = ceil($total_rows[0]['total'] / $rows_per_page);
+
+if(!isset($_GET['page'])){
+    $page = 1;
+}else{
+    $page = $_GET['page'];
+}
+
+$page_first_result = ($page - 1) * $rows_per_page;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,7 +49,7 @@ $prov = new Province($db);
                 <tbody>
                     <!-- <tr> -->
                     <?php
-                    $results = $prov->displayAll();
+                    $results = $prov->displayAll($page_first_result,$rows_per_page);
                     foreach ($results as $x) {
                         echo '<tr>';
                         echo "<td>" . $x['name'] . "</td>";
@@ -43,6 +61,10 @@ $prov = new Province($db);
                 </tbody>
             </table>
             <a class="button-link" href="province_add.php">Add New Record</a>
+            <?php
+            for($page = 1; $page <= $number_of_pages; $page++){
+                echo '<a href="province.view.php?page='. $page . '">' . $page . '</a>';
+            }?>
         </div>
     </body>
 </html>

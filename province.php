@@ -92,9 +92,9 @@ class Province {
         }
     }
 
-    public function displayAll() {
+    public function displayAll($page_first_result,$rows_per_page) {
         try {
-            $sql = "SELECT * FROM province";
+            $sql = "SELECT * FROM province LIMIT " . $page_first_result . "," . $rows_per_page;
             $stmt = $this->db->getConnection()->prepare($sql);
             $stmt->execute();
 
