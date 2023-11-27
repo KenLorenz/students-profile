@@ -240,3 +240,40 @@ footer {
     border-radius: 5px;
     text-decoration: none;
 }
+
+
+
+
+/* For reports' style */
+
+.chart_div {
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.content_report, .content_report_bd {
+    margin-left: 270px; /* Adjust to match the sidebar width */
+    padding: 100px;
+
+    border-width: 2px;
+    border-radius: 8px;
+    border-style: solid;
+
+    background-color: #81a591;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+#birthday_chart {
+    padding: inherit;
+}
+.content_report_bd {
+    margin-left: 230px;
+    padding: 50px 180px 50px 180px; /* Top Right Bottom Left*/
+}
+
+h2 {
+    text-align: center;
+}
