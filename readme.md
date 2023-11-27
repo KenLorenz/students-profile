@@ -24,5 +24,5 @@ Personal Addition:
 - Pagination -- Done
 
 
-Coding Session 2
-- JS stuff
+Report Charts
+- JS stuff -- Done
